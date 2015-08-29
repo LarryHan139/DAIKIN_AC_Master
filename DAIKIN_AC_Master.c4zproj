@@ -1,0 +1,9 @@
+﻿<Driver type="c4z" name="DAIKIN_AC_Master">
+ <Items>
+  <Item type="file" name="driver.xml" />
+  <Item type="file" name="driver.lua" />
+  <Item type="file" name="md5Helper.lua" />
+  <Item type="file" name="mybit.lua" />
+  <Item type="file" name="commonUtil.lua" />
+ </Items>
+</Driver>

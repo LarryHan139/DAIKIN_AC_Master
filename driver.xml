@@ -1,0 +1,164 @@
+<devicedata>
+  <copyright>Copyright 2012-2015 MingShang Corporation.  All rights reserved.</copyright>
+  <version>1</version>
+  <manufacturer>MingShang</manufacturer>
+  <creator>Larry.Han</creator>
+  <created>02/08/2015 12:00 AM</created>
+  <modified>02/08/2015 12:00 AM</modified>
+  <name>DAIKIN_AC_Master</name>
+  <model>DAIKIN_AC_Master</model>
+  <small>devices_sm\projector_on.gif</small>
+  <large>devices_lg\projector_on.gif</large>
+  <proxy name="MingShang DAIKIN AC Master">DAIKIN_AC_Master</proxy>
+  <control>lua_gen</control>
+  <driver>DriverWorks</driver>
+  <composer_categories>
+    <category>Lighting</category>
+  </composer_categories>
+  <version>2</version>
+  <states />
+  <conditionals />
+  <events />
+  <connections>
+    <connection>
+      <id>101</id>
+      <type>1</type>
+      <connectionname>Serial RS-232</connectionname>
+      <consumer>True</consumer>
+      <linelevel>True</linelevel>
+      <classes>
+        <class>
+          <classname>RS_232</classname>
+        </class>
+      </classes>
+    </connection>
+    <connection>
+      <id>1</id>
+      <type>1</type>
+      <facing>6</facing>
+      <connectionname>DAIKIN_AC Service Interface</connectionname>
+      <consumer>False</consumer>
+      <linelevel>False</linelevel>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <idautobind>43122</idautobind>
+      <hidden>False</hidden>
+      <classes>
+        <class>
+          <autobind>True</autobind>
+          <classname>MINGSHANG_DAIKIN_AC_CONTROL</classname>
+        </class>
+      </classes>
+    </connection>
+  </connections>
+  <config>
+    <script file="driver.lua"></script>
+    <!--<serialsettings>9600 8 none 1 none </serialsettings>-->
+    <identify_text>To Be Determined.</identify_text>
+    <properties>
+      <property>
+        <name>Auth Code</name>
+        <type>STRING</type>
+        <default></default>
+        <readonly>false</readonly>
+      </property>
+      <property>
+        <name>Security State</name>
+        <type>STRING</type>
+        <default></default>
+        <readonly>true</readonly>
+      </property>
+      <property>
+        <name>Box Address</name>
+        <type>LIST</type>
+        <items>
+          <item>1</item>
+          <item>2</item>
+          <item>3</item>
+          <item>4</item>
+          <item>5</item>
+          <item>6</item>
+          <item>7</item>
+          <item>8</item>
+          <item>9</item>
+          <item>10</item>
+          <item>11</item>
+          <item>12</item>
+          <item>13</item>
+          <item>14</item>
+          <item>15</item>
+          <item>16</item>
+          <item>17</item>
+          <item>18</item>
+          <item>19</item>
+          <item>20</item>
+          <item>21</item>
+          <item>22</item>
+          <item>23</item>
+          <item>24</item>
+          <item>25</item>
+          <item>26</item>
+          <item>27</item>
+          <item>28</item>
+          <item>29</item>
+          <item>30</item>
+          <item>31</item>
+        </items>
+        <default>1</default>
+        <readonly>false</readonly>
+      </property>
+      <property>
+        <name>Debug Mode</name>
+        <type>LIST</type>
+        <items>
+          <item>Off</item>
+          <item>Print</item>
+          <item>Log</item>
+          <item>Print and Log</item>
+        </items>
+        <default>Off</default>
+        <readonly>false</readonly>
+      </property>
+    </properties>
+    <actions />
+    <commands>
+      <command>
+        <name>Flash Switch</name>
+        <description>Start flashing NAME for PARAM1 : PARAM2 : PARAM3</description>
+        <params>
+          <param>
+            <name>Hours</name>
+            <type>RANGED_INTEGER</type>
+            <minimum>0</minimum>
+            <maximum>99</maximum>
+          </param>
+          <param>
+            <name>Minutes</name>
+            <type>RANGED_INTEGER</type>
+            <minimum>0</minimum>
+            <maximum>59</maximum>
+          </param>
+          <param>
+            <name>Seconds</name>
+            <type>RANGED_INTEGER</type>
+            <minimum>0</minimum>
+            <maximum>59</maximum>
+          </param>
+        </params>
+      </command>
+      <command>
+        <name>Stop Flashing Switch</name>
+        <description>Stop Flashing NAME</description>
+      </command>
+    </commands>
+  </config>
+  <capabilities>
+    <!--<serialsettings>9600 8 none 1 none</serialsettings>-->
+    <serialsettings>9600 8 even 1 none</serialsettings>
+    <can_poll_serial>False</can_poll_serial>
+  </capabilities>
+  <composer_categories>
+    <category>Unknown</category>
+  </composer_categories>
+  <controlmethod>serial</controlmethod>
+</devicedata>
